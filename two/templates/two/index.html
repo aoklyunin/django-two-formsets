@@ -1,0 +1,43 @@
+{% extends "two/base.html" %}
+{% load staticfiles %}
+{# Load the tag library #}
+{% load bootstrap3 %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_tags %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+
+{% block title %}Тест{% endblock %}
+
+{% block content %}
+<h1>Two Formsets</h1>
+{% if user.is_authenticated == False %}
+<p>Для доступа к системе Вам надо войти или зарегистрироваться</p>
+{% else %}
+
+{% endif %}
+{% endblock %}
+
+
+
+
+{% block sub_content %}
+    <table>
+
+
+
+    {% for eq in eqs%}
+        <tr>
+        <td>{{eq.name}}</td><td><a href="/detail/{{eq.pk}}/">Редактировать</a></td>
+
+        </tr>
+    {%endfor%}
+</table>
+{% endblock %}
+
+
+{% block error_messages %}
+{% endblock %}
